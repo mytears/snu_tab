@@ -73,7 +73,6 @@
 
 .guide_box {
     background: rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50px;
     padding: 20px 190px;
     display: inline-block;
