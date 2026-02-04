@@ -1,0 +1,60 @@
+{
+    "header": {
+        "logo_mode": "ani",
+        "password_url_old": "data/password.json",
+        "password_url": "http://112.221.175.242:9016/cms/api/kiosk_pw.jsp",
+        "password_url_real": "http://192.168.1.21:9000/cms/api/kiosk_pw.jsp",
+        "cmd_line": "|"
+    },
+	"device_list":[
+        {
+          "oscCode": "600",
+          "areaCode": "H001KIO",
+          "areaName": "뉴박스"
+        },
+        {
+          "oscCode": "700",
+          "areaCode": "H002KIO",
+          "areaName": "케이브1"
+        },
+        {
+          "oscCode": "500",
+          "areaCode": "H003KIO",
+          "areaName": "케이브2"
+        },
+        {
+          "oscCode": "800",
+          "areaCode": "H004KIO",
+          "areaName": "외부"
+        }
+	],
+    "osc_number_list": {
+        "cmd_0":"05",
+        "cmd_1":"36",
+        "cmd_2":"30",
+        "cmd_3":"25",
+        "cmd_4":"45",
+        "cmd_5":"601",
+        "cmd_6":"601",
+        "cmd_start":"0",
+        "cmd_stop":"100"
+    },
+    "osc_cmd_list": [
+        {
+            "type":"volume",
+            "cmd_name": "VOL"
+        },
+        {
+            "type":"power_on",
+            "cmd_name": "ON"
+        },
+        {
+            "type":"power_off",
+            "cmd_name": "OFF"
+        },
+        {
+            "type":"play",
+            "cmd_name": "PLAY"
+        }
+	]
+}
