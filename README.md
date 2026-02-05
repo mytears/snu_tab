@@ -1,1 +1,1 @@
-https://mytears.github.io/snu_tab/
+https://mytears.github.io/snutab/
