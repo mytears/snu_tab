@@ -30,6 +30,8 @@ let m_osc_number_list = [];
 let m_cmd_list = [];
 let m_is_first_page = true;
 let m_big_button_num = -1;
+let menuTextTimeout;
+let m_oscCode = 5000;
 
 function setInit() {
 
@@ -156,13 +158,8 @@ function onClickBtnMenuSmall(_obj) {
     let t_group = $(_obj).closest('.menu_bot_box').attr('code');
     $(".menu_btn_s").removeClass("active");
     $(_obj).addClass("active");
-
-    console.log("onClickBtnMenuSmall", m_device_code, t_code);
-    let t_title = $(_obj).attr("title");
-    if (t_title == "") {
-        t_title = "-";
-    }
-    $(".menu_mid_title").html(t_title);
+    console.log("onClickBtnMenuSmall", t_code);
+    $(".menu_mid_title").html("");
     $(".menu_mid_name").html("");
     let chk_num = 0;
 
@@ -199,7 +196,15 @@ function onClickBtnMenuSmall(_obj) {
         } 
     }
     let t_cue = convCue(m_device_code, chk_num + parseInt(t_code));
+    const t_title = $(_obj).attr("title") || "-";
+    $(".menu_mid_title").html(t_title);
     $(".menu_mid_name").html(t_cue);
+    clearTimeout(menuTextTimeout);
+    menuTextTimeout = setTimeout(() => {
+        $(".menu_btn_s").removeClass("active");
+        $(".menu_mid_title").html("");
+        $(".menu_mid_name").html("");
+    }, 60000);
     setCmd(t_cue);
 }
 
@@ -993,7 +998,8 @@ function volumeToDb(volume) {
 }
 
 function convCue(_num, _cue) {
-    let f_cue = parseInt(m_device_list[parseInt(_num)].oscCode);
+    //let f_cue = parseInt(m_device_list[parseInt(_num)].oscCode);
+    let f_cue = m_oscCode;
     let r_cue = 0;
     if (_cue == 100) {
         r_cue = f_cue / 100;
