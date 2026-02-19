@@ -31,7 +31,7 @@ let m_cmd_list = [];
 let m_is_first_page = true;
 let m_big_button_num = -1;
 let menuTextTimeout;
-let m_oscCode = 5000;
+let m_oscCode = 505;
 
 function setInit() {
 
@@ -163,42 +163,16 @@ function onClickBtnMenuSmall(_obj) {
     $(".menu_mid_name").html("");
     let chk_num = 0;
 
-    if (parseInt(t_code) < 100) {
-        if (m_big_button_num == 0) {
-            chk_num = parseInt(m_osc_number_list.cmd_0);
-        } else if (m_big_button_num == 1) {
-            if (t_group == "0") {
-                chk_num = parseInt(m_osc_number_list.cmd_1);
-            } else if (t_group == "1") {
-                chk_num = parseInt(m_osc_number_list.cmd_2);
-            }
-        } else if (m_big_button_num == 2) {
-            chk_num = parseInt(m_osc_number_list.cmd_3);
-        } else if (m_big_button_num == 3) {
-            chk_num = parseInt(m_osc_number_list.cmd_4);
-        }
+        console.log(m_big_button_num, t_group);
+    if (parseInt(t_code) < 100) {        
     } else {
-        if (m_big_button_num == 0) {
-            t_code = parseInt(t_code) - 100;
-            chk_num = parseInt(m_osc_number_list.cmd_5);
-        }else if (m_big_button_num == 1) {
-            if (t_group == "1") {
-                let t_cmd_num = 0;
-                if(m_device_code==0){
-                    t_cmd_num = 2801;
-                }else if(m_device_code==1){
-                    t_cmd_num = 3701;
-                }else if(m_device_code==2){
-                    t_cmd_num = 1901;
-                }
-                chk_num = t_cmd_num;
-            }
-        } 
+        chk_num = 496;
     }
     let t_cue = convCue(m_device_code, chk_num + parseInt(t_code));
     const t_title = $(_obj).attr("title") || "-";
+    const t_desc = $(_obj).attr("desc") || "-";
     $(".menu_mid_title").html(t_title);
-    $(".menu_mid_name").html(t_cue);
+    $(".menu_mid_name").html(t_desc);
     clearTimeout(menuTextTimeout);
     menuTextTimeout = setTimeout(() => {
         $(".menu_btn_s").removeClass("active");
