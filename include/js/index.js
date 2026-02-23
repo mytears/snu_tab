@@ -180,6 +180,11 @@ function onClickBtnMenuSmall(_obj) {
         $(".menu_mid_name").html("");
     }, 60000);
     setCmd(t_cue);
+    
+    $(".loading_cover").show();
+    setTimeout(function () {
+        $(".loading_cover").hide();
+    }, 1500);
 }
 
 function onClickBtnMenu(_obj) {
