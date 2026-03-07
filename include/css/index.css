@@ -60,7 +60,7 @@
 }
 
 .main_title {
-    font-size: 95px;
+    font-size: 100px;
     font-weight: 700;
     margin-bottom: 10px;
     letter-spacing: -1px;
@@ -75,10 +75,16 @@
     font-weight: 700;
     margin-bottom: 30px;
 }
+.sub_title span{
+    font-size: 90px;
+}
+.bot_title {
+    font-size: 65px;
+}
 
 .guide_box {
     background: rgba(0, 0, 0, 0.4);
-    border-radius: 80px;
+    border-radius: 150px;
     padding: 30px 100px 25px 100px;
     display: inline-block;
     font-size: 60px;
@@ -92,15 +98,14 @@
     letter-spacing: 0px;
     color: rgba(255, 255, 255, 0.9);
     font-weight: 500;
-    margin-top: 20px;
 
 }
 
 /* 작가 정보 */
 .menu_mid_zone {
     text-align: center;
-    margin-top: 30px;
-    margin-bottom: 40px;
+    margin-top: 0px;
+    margin-bottom: 20px;
     height: 180px;
 }
 
@@ -132,10 +137,7 @@
     border: none;
     cursor: pointer;
     display: flex;
-    align-items: center;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 20px;
+    padding: 60px 30px 0px 30px;
     transition: all 0.2s;
     outline: none;
 }
@@ -144,7 +146,7 @@
 .menu_btn_s {
     color: #333;
     /* 버튼 내부 텍스트 색상 */
-    font-size: 36px;
+    font-size: 35px;
     font-weight: 700;
     text-align: left;
     word-break: keep-all;
