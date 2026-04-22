@@ -177,7 +177,7 @@ function onClickBtnMenuSmall(_obj) {
     $(".menu_mid_name").html("");
     let chk_num = 0;
 
-        console.log(m_big_button_num, t_group);
+    //console.log(m_big_button_num, t_group);
     if (parseInt(t_code) < 100) {        
     } else {
         chk_num = 496;
